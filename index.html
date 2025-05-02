@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGTV - Sua TV Online</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">AGTV</div>
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#vantagens">Vantagens</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/SEU_NUMERO" target="_blank" class="whatsapp-btn">
+        <img src="https://same-assets.com/whatsapp-icon.svg" alt="WhatsApp" height="30">
+      </a>
+      <div class="menu-mobile" id="menu-mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Sua TV online sem limites</h1>
+        <p>Mais de 200 canais, filmes, séries e muito mais. A melhor experiência de entretenimento para você!</p>
+        <a href="#planos" class="cta-btn">Escolha seu Plano</a>
+      </div>
+    </section>
+    <!-- Filmes Destaque Carousel -->
+    <section id="filmes-destaque" class="filmes-destaque">
+      <h2>Filmes e Séries em destaque</h2>
+      <div class="filmes-carousel">
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/m65PPR4pH9s5y2l-ABsJt3U6-q5SFKvo.jpeg" alt="Doutor Estranho no Multiverso da Loucura">
+          <span>Doutor Estranho no Multiverso da Loucura</span>
+        </div>
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/yxRbe_5SAkSwKgt7eIRUL9unL47tH7_y.jpeg" alt="Wicked">
+          <span>Wicked</span>
+        </div>
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/Va2tVTX2OkVL7HqeDywAUVfvrTMeD4zV.jpeg" alt="Ainda Estou Aqui">
+          <span>Ainda Estou Aqui</span>
+        </div>
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/pdv6eDSHLg8mYsm9okxTnimG7wyc_V4r.jpeg" alt="Round 6">
+          <span>Round 6</span>
+        </div>
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/7w0UBebh6RLgYGMoQkVxFQYSbqx0IIUR.jpeg" alt="Quando o Telefone Toca">
+          <span>Quando o Telefone Toca</span>
+        </div>
+        <div class="filme-card">
+          <img src="https://ugc.same-assets.com/RVFaL_rliMWVR0bSFVxqyNu1RVdhjTJX.jpeg" alt="Entre Montanhas">
+          <span>Entre Montanhas</span>
+        </div>
+      </div>
+    </section>
+    <section id="planos" class="planos">
+      <h2>Escolha o seu plano</h2>
+      <div class="planos-cards">
+        <div class="plano-card">
+          <h3>Mensal</h3>
+          <p class="price">R$29,90</p>
+          <ul>
+            <li>Acesso imediato</li>
+            <li>+200 canais SD/HD/FHD</li>
+            <li>Filmes e séries</li>
+          </ul>
+          <button class="btn-assinar" data-link="SUA_API_MENSAL">Assinar</button>
+        </div>
+        <div class="plano-card">
+          <h3>4 meses</h3>
+          <p class="price">R$109,90</p>
+          <ul>
+            <li>Economize mais</li>
+            <li>+200 canais SD/HD/FHD</li>
+            <li>Filmes e séries</li>
+          </ul>
+          <button class="btn-assinar" data-link="SUA_API_4MESES">Assinar</button>
+        </div>
+        <div class="plano-card">
+          <h3>6 meses</h3>
+          <p class="price">R$159,90</p>
+          <ul>
+            <li>Mais vantajoso</li>
+            <li>+200 canais SD/HD/FHD</li>
+            <li>Filmes e séries</li>
+          </ul>
+          <button class="btn-assinar" data-link="SUA_API_6MESES">Assinar</button>
+        </div>
+        <div class="plano-card destaque">
+          <h3>12 meses</h3>
+          <p class="price">R$269,90</p>
+          <ul>
+            <li>Super desconto</li>
+            <li>+200 canais SD/HD/FHD</li>
+            <li>Filmes e séries</li>
+          </ul>
+          <button class="btn-assinar" data-link="SUA_API_12MESES">Assinar</button>
+        </div>
+      </div>
+    </section>
+    <section id="vantagens" class="vantagens">
+      <h2>Por que escolher a AGTV?</h2>
+      <div class="vantagens-lista">
+        <div class="vantagem-item">
+          <span class="vantagem-icon">🔥</span>
+          <p>Transmissão estável 24h</p>
+        </div>
+        <div class="vantagem-item">
+          <span class="vantagem-icon">🎬</span>
+          <p>Filmes e séries atualizados</p>
+        </div>
+        <div class="vantagem-item">
+          <span class="vantagem-icon">📱</span>
+          <p>Acesse do celular, TV ou computador</p>
+        </div>
+        <div class="vantagem-item">
+          <span class="vantagem-icon">💬</span>
+          <p>Suporte rápido no WhatsApp</p>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-lista">
+        <div class="faq-item">
+          <button class="faq-pergunta">Como funciona a AGTV?</button>
+          <div class="faq-resposta">Você acessa nossa plataforma via aplicativo ou navegador e tem milhares de opções ao seu alcance sem complicação.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Posso assistir de várias telas ao mesmo tempo?</button>
+          <div class="faq-resposta">Sim, oferecemos opções com acesso multi-tela, conforme seu plano.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Quais canais estão disponíveis?</button>
+          <div class="faq-resposta">Oferecemos canais abertos, esportivos, infantis, filmes, séries e muito mais. Consulte nossa lista completa atualizada pelo WhatsApp.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Como faço para pagar?</button>
+          <div class="faq-resposta">É fácil! Basta escolher o plano, clicar em assinar e você será direcionado para opções seguras de pagamento online.</div>
+        </div>
+      </div>
+    </section>
+    <section id="contato" class="contato">
+      <h2>Fale Conosco</h2>
+      <p>Está com dúvidas ou precisa de ajuda? Fale conosco pelo WhatsApp!</p>
+      <a href="https://wa.me/SEU_NUMERO" class="cta-btn" target="_blank">Atendimento WhatsApp</a>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 AGTV. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

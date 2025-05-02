@@ -1,0 +1,103 @@
+// Menu mobile toggle
+const menuMobile = document.getElementById('menu-mobile');
+const navLinks = document.querySelector('.nav-links');
+menuMobile.onclick = () => {
+  navLinks.classList.toggle('mostrar');
+};
+// Fechar menu após clicar em um link
+navLinks.querySelectorAll('a').forEach(link => {
+  link.onclick = () => {
+    navLinks.classList.remove('mostrar');
+  };
+});
+
+// Suave scroll para âncoras
+const linksAnchor = document.querySelectorAll('a[href^="#"]');
+linksAnchor.forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// FAQ accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-pergunta');
+  btn.onclick = () => {
+    item.classList.toggle('ativo');
+    // fecha os outros
+    faqItems.forEach(other => {
+      if (other !== item) other.classList.remove('ativo');
+    });
+  };
+});
+
+// Botões dos planos redirecionam para API de pagamento
+const botoesAssinar = document.querySelectorAll('.btn-assinar');
+botoesAssinar.forEach(botao => {
+  botao.onclick = () => {
+    const url = botao.getAttribute('data-link');
+    if (url && url !== 'SUA_API_MENSAL' && url !== 'SUA_API_4MESES' && url !== 'SUA_API_6MESES' && url !== 'SUA_API_12MESES') {
+      window.open(url, '_blank');
+    } else {
+      alert('Informe o link correto da API de pagamento no atributo data-link.');
+    }
+  };
+});
+
+// Carrossel infinito contínuo de filmes
+const carousel = document.querySelector('.filmes-carousel');
+if (carousel) {
+  // Duplique os filmes para efeito visual sem cortes
+  const filmesOriginais = Array.from(carousel.children);
+  // Só duplica se não tiver sido duplicado ainda
+  if (filmesOriginais.length && !carousel.classList.contains('loop-ready')) {
+    filmesOriginais.forEach(card => carousel.appendChild(card.cloneNode(true)));
+    carousel.classList.add('loop-ready');
+  }
+
+  let scrollSpeed = 0.2; // px por frame (ajustado para mais suave)
+  let reqId;
+  let lastScroll = 0;
+
+  function animateLoop() {
+    // Calcula o próximo scroll com base no último valor
+    const nextScroll = carousel.scrollLeft + scrollSpeed;
+    
+    // Aplica uma transição suave usando CSS
+    carousel.style.transition = 'scroll-left 0.2s ease-out';
+    carousel.scrollLeft = nextScroll;
+    
+    // Quando chegar no "final", faz uma transição suave para o início
+    if (nextScroll >= carousel.scrollWidth / 2) {
+      carousel.style.transition = 'none';
+      carousel.scrollLeft = 0;
+    }
+    
+    lastScroll = nextScroll;
+    reqId = requestAnimationFrame(animateLoop);
+  }
+
+  // Não pausa mais ao passar mouse, inicia sempre
+  function startInfiniteCarousel() {
+    if (!reqId) reqId = requestAnimationFrame(animateLoop);
+  }
+  function stopInfiniteCarousel() {
+    if (reqId) cancelAnimationFrame(reqId);
+    reqId = null;
+  }
+
+  window.addEventListener('blur', stopInfiniteCarousel);
+  window.addEventListener('focus', startInfiniteCarousel);
+
+  // Reseta rolagem se tela for redimensionada
+  window.addEventListener('resize', () => {
+    carousel.scrollLeft = 0;
+  });
+
+  startInfiniteCarousel();
+}
