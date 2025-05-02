@@ -65,20 +65,12 @@ if (carousel) {
   let lastScroll = 0;
 
   function animateLoop() {
-    // Calcula o próximo scroll com base no último valor
-    const nextScroll = carousel.scrollLeft + scrollSpeed;
-    
-    // Aplica uma transição suave usando CSS
-    carousel.style.transition = 'scroll-left 0.2s ease-out';
-    carousel.scrollLeft = nextScroll;
-    
-    // Quando chegar no "final", faz uma transição suave para o início
-    if (nextScroll >= carousel.scrollWidth / 2) {
-      carousel.style.transition = 'none';
+    carousel.scrollLeft += scrollSpeed;
+  
+    if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
       carousel.scrollLeft = 0;
     }
-    
-    lastScroll = nextScroll;
+  
     reqId = requestAnimationFrame(animateLoop);
   }
 
